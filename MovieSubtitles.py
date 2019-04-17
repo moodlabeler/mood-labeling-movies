@@ -8,11 +8,15 @@ class MovieSubtitle:
         host='127.0.0.1',
         database='moods')
 
-    def getSubtitles(self):
+    def getSubtitles(self,mood):
         cursor = self.conn.cursor()
-        cursor.execute("SELECT datafile FROM movies")
-        result = cursor.fetchall()
-        #for x in result:
-        #    print(str(x))
+        resultCursor = self.conn.cursor()
+        cursor.execute("SELECT mood_id FROM moods WHERE mood=%s",(mood,))
+        mood_id = cursor.fetchall()
+        if len(mood_id)<1:
+            return []
+        resultCursor.execute("SELECT datafile FROM movies WHERE mood=%s"
+                             ,(mood_id[0][0],))
+        result = resultCursor.fetchall()
         self.conn.close()
         return result
