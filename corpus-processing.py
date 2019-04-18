@@ -1,6 +1,7 @@
 import re
 import operator
 import nltk
+
 from MovieSubtitles import MovieSubtitle
 class Processor:
     def process(self,mood):
@@ -8,13 +9,13 @@ class Processor:
         res = subtitles.getSubtitles(mood)
         j=0
         for x in res:
-            #print(x)
-            #print(script)
             #tokens = nltk.word_tokenize(script)
             #tagged = nltk.pos_tag(tokens)
             data = {}
-            script = str(x)
-            splitted = re.findall(r"[\w']+", script)
+            script = str(x[0])
+            #splitted = re.findall(r"[\w']+", script)
+            #splitted = re.split(r'[\s-]+', script)
+            splitted = re.split(r'[^A-Za-z0-9\\]+', script)
             #print(splitted)
 
             i = 0
@@ -26,10 +27,11 @@ class Processor:
                     data[word] = 1
                 i += 1
 
-            print(sorted(data.items(), key=operator.itemgetter(1), reverse=True))
-           # for key in sorted(data.items(), key=operator.itemgetter(1), reverse=True):
-           #     print(key)
-           #     i += 1
+            #print(sorted(data.items(), key=operator.itemgetter(1), reverse=True))
+            for key in sorted(data.items(), key=operator.itemgetter(1), reverse=True):
+                #print(key[1])
+                subtitles.storeWord(key[0],mood,key[1])
+                i += 1
 
             print("----------------------------------------------------------")
 

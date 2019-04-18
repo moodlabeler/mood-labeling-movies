@@ -18,5 +18,22 @@ class MovieSubtitle:
         resultCursor.execute("SELECT datafile FROM movies WHERE mood=%s"
                              ,(mood_id[0][0],))
         result = resultCursor.fetchall()
-        self.conn.close()
         return result
+
+
+    def storeWord(self,word,mood,count):
+        cursor = self.conn.cursor()
+        count_cursor = self.conn.cursor()
+        total = 0
+        count_cursor.execute("SELECT {moodp} FROM words WHERE word=%s".format(moodp=mood), (word,))
+        word_count = count_cursor.fetchall()
+        if len(word_count) < 1:
+            total = count
+            cursor.execute("INSERT INTO words (word, {moodp}) VALUES (%s,%s)".format(moodp=mood), (word, total))
+        else:
+            total = word_count[0][0]+count
+            cursor.execute("UPDATE words SET {moodp} = %s WHERE word = %s".format(moodp=mood), (total,word,))
+        self.conn.commit()
+        print(word + " - " + str(total))
+        #print(total)
+
