@@ -1,6 +1,6 @@
 import mysql.connector
 
-class MovieSubtitle:
+class DBHandler:
     def __init__(self):
         self.conn = mysql.connector.connect(
         user='root',
