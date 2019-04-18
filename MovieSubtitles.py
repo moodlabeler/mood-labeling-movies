@@ -15,6 +15,11 @@ class MovieSubtitle:
         mood_id = cursor.fetchall()
         if len(mood_id)<1:
             return []
+        resultCursor.execute("SET NAMES utf8mb4;")  # or utf8 or any other charset you want to handle
+
+        resultCursor.execute("SET CHARACTER SET utf8mb4;")  # same as above
+
+        resultCursor.execute("SET character_set_connection=utf8mb4;")  # same as above
         resultCursor.execute("SELECT datafile FROM movies WHERE mood=%s"
                              ,(mood_id[0][0],))
         result = resultCursor.fetchall()
@@ -34,6 +39,13 @@ class MovieSubtitle:
             total = word_count[0][0]+count
             cursor.execute("UPDATE words SET {moodp} = %s WHERE word = %s".format(moodp=mood), (total,word,))
         self.conn.commit()
-        print(word + " - " + str(total))
+        #print(word + " - " + str(total))
         #print(total)
+    def disconnect(self):
+        self.conn.disconnect()
 
+    def delete(self):
+        cursor = self.conn.cursor()
+        cursor.execute("DELETE FROM words")
+        self.conn.commit()
+        self.conn.disconnect()

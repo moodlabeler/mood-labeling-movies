@@ -1,41 +1,49 @@
 import re
 import operator
 import nltk
+import zlib
 
 from MovieSubtitles import MovieSubtitle
 class Processor:
-    def process(self,mood):
+    def text_pre_processing(self,mood):
         subtitles = MovieSubtitle()
         res = subtitles.getSubtitles(mood)
         j=0
         for x in res:
-            #tokens = nltk.word_tokenize(script)
-            #tagged = nltk.pos_tag(tokens)
-            data = {}
-            script = str(x[0])
-            #splitted = re.findall(r"[\w']+", script)
-            #splitted = re.split(r'[\s-]+', script)
-            splitted = re.split(r'[^A-Za-z0-9\\]+', script)
-            #print(splitted)
+            bag = {}
+            script = x[0]
 
+            ### Decode for special characters, lowercase and split the string into independant words.
+            script = script.decode('utf-8')
+            script = script.lower()
+            splitted = re.split(r'[^A-Za-z0-9\wåäöÅÄÖ]+', script)
+
+
+            ### Fill in the bag-of-words
             i = 0
             while i < len(splitted)-1:
                 word = splitted[i]
-                if word in data:
-                    data[word] += 1
+                if word in bag:
+                    bag[word] += 1
                 else:
-                    data[word] = 1
+                    bag[word] = 1
                 i += 1
-
-            #print(sorted(data.items(), key=operator.itemgetter(1), reverse=True))
-            for key in sorted(data.items(), key=operator.itemgetter(1), reverse=True):
-                #print(key[1])
+            for key in sorted(bag.items(), key=operator.itemgetter(1), reverse=True):
                 subtitles.storeWord(key[0],mood,key[1])
                 i += 1
+        subtitles.disconnect()
 
-            print("----------------------------------------------------------")
 
-        print("done")
+
+    def clear_lexicons(self):
+        s = MovieSubtitle()
+        s.delete()
+
 
 pro = Processor()
-pro.process("joy")
+pro.clear_lexicons()
+pro.text_pre_processing("surprise")
+pro.text_pre_processing("joy")
+pro.text_pre_processing("fear")
+pro.text_pre_processing("sadness")
+print("Lexicon created")
