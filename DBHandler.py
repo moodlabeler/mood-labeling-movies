@@ -46,8 +46,8 @@ class DBHandler:
         cursor.execute("SELECT datafile FROM movies WHERE id=%s"
                          , (id,))
         result = cursor.fetchall()
-        print(result)
-        return result
+        print(result[0][0])
+        return result[0][0]
 
     def disconnect(self):
         self.conn.disconnect()
@@ -84,10 +84,22 @@ class DBHandler:
             total +=count
             if element == mood:
                 mood_value=count
-        return [mood_value,total]
+        return [mood_value+0.5,total+0.5]
 
+    # Returns the total occurence of words for a specific mood and the total occurence of words for all moods.
+    def get_mood_count(self,mood):
+        total = 0
+        mood_value = 0
+        cursor = self.conn.cursor()
+        list = self.list_moods()
+        for element in list:
+            cursor.execute("SELECT SUM({moodp}) FROM words".format(moodp=element))
+            count = cursor.fetchall()[0][0]
+            total += count
+            if element == mood:
+                mood_value = count
+        return [mood_value, total]
     #cursor.execute("SELECT {moodp} FROM words WHERE word=%s ".format(moodp=mood), (word,))
 
         #print(cursor.fetchall()[0][0])
-
 
