@@ -36,6 +36,8 @@ class Processor:
         while i < len(splitted) - 1:
             if splitted[i] not in stopwords.words('swedish'):
                 word = stemmer.stem(splitted[i])
+                #word = splitted[i]
+                #print(word)
                 if word in bag:
                     bag[word] += 1
                 else:

@@ -20,7 +20,7 @@ class DBHandler:
         resultCursor.execute("SET CHARACTER SET utf8mb4;")  # same as above
 
         resultCursor.execute("SET character_set_connection=utf8mb4;")  # same as above
-        resultCursor.execute("SELECT datafile FROM movies WHERE mood=%s"
+        resultCursor.execute("SELECT datafile,movie_title FROM resources WHERE mood=%s and datafile IS NOT NULL"
                              ,(mood_id[0][0],))
         result = resultCursor.fetchall()
         return result
@@ -29,25 +29,25 @@ class DBHandler:
         cursor = self.conn.cursor()
         count_cursor = self.conn.cursor()
         total = 0
-        count_cursor.execute("SELECT {moodp} FROM words WHERE word=%s".format(moodp=mood), (word,))
-        word_count = count_cursor.fetchall()
-        if len(word_count) < 1:
+        count_cursor.execute("SELECT EXISTS(SELECT 1 FROM words WHERE word=%s)", (word,))
+        word_exists = count_cursor.fetchall()
+        if word_exists[0][0] == 0:
             total = count
             cursor.execute("INSERT INTO words (word, {moodp}) VALUES (%s,%s)".format(moodp=mood), (word, total))
         else:
+            count_cursor.execute("SELECT {moodp} FROM words WHERE word=%s".format(moodp=mood), (word,))
+            word_count = count_cursor.fetchall()
             total = word_count[0][0]+count
             cursor.execute("UPDATE words SET {moodp} = %s WHERE word = %s".format(moodp=mood), (total,word,))
         self.conn.commit()
-        #print(word + " - " + str(total))
         #print(total)
 
     def get_subtitle(self,id):
         cursor = self.conn.cursor()
-        cursor.execute("SELECT datafile FROM movies WHERE id=%s"
+        cursor.execute("SELECT MOVIE_TITLE,datafile FROM resources WHERE id=%s"
                          , (id,))
         result = cursor.fetchall()
-        print(result[0][0])
-        return result[0][0]
+        return result[0]
 
     def disconnect(self):
         self.conn.disconnect()
@@ -101,5 +101,12 @@ class DBHandler:
         return [mood_value, total]
     #cursor.execute("SELECT {moodp} FROM words WHERE word=%s ".format(moodp=mood), (word,))
 
-        #print(cursor.fetchall()[0][0])
+    def get_all_word(self):
+        cursor = self.conn.cursor()
+        cursor.execute("SELECT word,joy FROM words")
+        result = cursor.fetchall()
+        print("word - joy - fear - sadness - surprise")
+        print(result)
+        for x in result:
+            print(x[0] + "-"+ str(x[1]))
 
