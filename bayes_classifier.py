@@ -1,3 +1,4 @@
+import math
 from math import log
 
 import numpy as np
@@ -10,7 +11,6 @@ class BayesClassifier:
     def __init__(self,id):
         self.db = DBHandler()
         movie= self.db.get_subtitle(id)
-        print(movie[0])
         self.bag = Processor().text_pre_processing(movie[1])
 
     ### Logratithmic Probability that a word belongs to a specific mood - P(word|mood)

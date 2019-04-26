@@ -1,10 +1,18 @@
+from DBHandler import DBHandler
 from bayes_classifier import BayesClassifier
 
-b = BayesClassifier(60) ## Insert id from database
-dir = {}
-dir["sadness"] = b.calculate_document("sadness")
-dir["surprise"] = b.calculate_document("surprise")
-dir["fear"] = b.calculate_document("fear")
-dir["joy"] = b.calculate_document("joy")
-for key in dir.items():
-    print(key)
+movies = DBHandler().get_test_movies()
+for movie in movies:
+    id = movie[0]
+    mood = movie[1]
+    subtitles = movie[2]
+    title = movie[3]
+    print (title + "-" + mood)
+    b = BayesClassifier(id)
+    dir = {}
+    dir["sadness"] = b.calculate_final("sadness")
+    dir["surprise"] = b.calculate_final("surprise")
+    dir["fear"] = b.calculate_final("fear")
+    dir["joy"] = b.calculate_final("joy")
+    for key in dir.items():
+        print(key)
