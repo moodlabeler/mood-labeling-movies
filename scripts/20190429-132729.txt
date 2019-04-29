@@ -94,3 +94,6 @@ Flykten till framtiden - JOY - SURPRISE
 ('fear', -6972.789013448321)
 ('joy', -6869.862263313312)
 
+Total movies: 16
+Correct guesses: 7
+Correct percentage: 0.4375

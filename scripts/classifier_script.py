@@ -6,14 +6,31 @@ from soupsieve.util import upper
 from DBHandler import DBHandler
 from bayes_classifier import BayesClassifier
 
+def print_results(tot_movies, correct_class, result_file):
+    print("Total movies: ", tot_movies)
+    print("Correct guesses: ", correct_class)
+    print("Correct percentage: ", correct_class / tot_movies)
+    result_file.write("Total movies: " +  str(tot_movies) + "\n")
+    result_file.write("Correct guesses: " + str(correct_class) + "\n")
+    result_file.write("Correct percentage: " + str(correct_class / tot_movies) + "\n")
+    result_file.close()
+    print("------------------------")
+    print("Done")
+    print("------------------------")
+
+def print_start():
+    file_name = str(datetime.datetime.now().strftime("%Y%m%d-%H%M%S")) + ".txt"
+    print("------------------------")
+    print("Printing results to file ", file_name)
+    print("------------------------")
+    return open(file_name, 'w')
+
+
+
 movies = DBHandler().get_test_movies()
 correct_class = 0
 tot_movies = 0
-file_name = str(datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))+".txt"
-result_file = open(file_name, 'w')
-print("------------------------")
-print("Printing results to file ", file_name)
-print("------------------------")
+result_file = print_start()
 for movie in movies:
     tot_movies += 1
     id = movie[0]
@@ -35,10 +52,5 @@ for movie in movies:
         print(key)
         result_file.write(str(key) + "\n")
     result_file.write("\n")
-print("Total movies: ", tot_movies)
-print("Correct guesses: ", correct_class)
-print("Correct percentage: ", correct_class / tot_movies)
-result_file.close()
-print("------------------------")
-print("Done")
-print("------------------------")
+print_results(tot_movies, correct_class, result_file)
+

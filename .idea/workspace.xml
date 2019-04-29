@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19e7f574-f62b-4423-ae7c-dfa8ef92a34c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mood-labeling-movies.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mood-labeling-movies.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/DBHandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bayes_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/bayes_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/corpus_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/20190429-124133.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/20190429-124734.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/classifier_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier_script.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -126,8 +122,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/classifier_script.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+            <state relative-caret-position="110">
+              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
               <folding>
                 <element signature="e#0#6#0" expanded="true" />
               </folding>
@@ -397,7 +393,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57946000" />
+    <option name="totallyTimeSpent" value="59876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -417,7 +413,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32983682" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="11" visible="true" weight="0.3391116" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="11" visible="true" weight="0.3391116" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32983682" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -556,8 +552,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/classifier_script.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+        <state relative-caret-position="110">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
           <folding>
             <element signature="e#0#6#0" expanded="true" />
           </folding>
