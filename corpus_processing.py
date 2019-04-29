@@ -26,7 +26,7 @@ class Processor:
         script = text
 
         ### Decode for special characters, lowercase and split the string into independant words.
-        script = script.decode('utf-8')
+        #script = script.decode('utf-8')
         script = script.lower()
         splitted = re.split(r'[^A-Za-z0-9\wåäöÅÄÖ]+', script)
         # print(splitted)
