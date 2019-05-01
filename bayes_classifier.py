@@ -12,11 +12,16 @@ class BayesClassifier:
         self.db = DBHandler()
         movie= self.db.get_subtitle(id)
         self.bag = Processor().text_pre_processing(movie[1])
+        self.all_words_count = self.smoothing()
 
     ### Logratithmic Probability that a word belongs to a specific mood - P(word|mood)
     def calculate_word(self, word, mood):
         values = self.db.get_word_count(word,mood)
-        return values[0]/values[1]
+        return (values[0] + 1) / (values[1] + self.all_words_count)
+
+    ### Additative smoothing - to avoid multipying probabilities with 0 for words that do not occur in lexicon
+    def smoothing(self):
+        return self.db.count_all_moods()
 
     ### Logarithmic Probability that a document/corpus blongs to a specific mood - P(corpus|mood)
     ### Achieved by adding the logarithmic probability of all individual words - sum(Pi(word|mood))

@@ -84,10 +84,10 @@ class DBHandler:
             if len(count_array) <= 0:
                 return [1,1]
             count = count_array[0][0]
-            total +=count
+            total +=count   #total is for all the words in all the moods
             if element == mood:
-                mood_value=count
-        return [mood_value+0.5,total+0.5]
+                mood_value=count    #count is specific word in specific mood
+        return [mood_value,total]
 
     # Returns the total occurence of words for a specific mood and the total occurence of words for all moods.
     def get_mood_count(self,mood):
@@ -119,3 +119,9 @@ class DBHandler:
         #cursor.execute("SELECT movie_title FROM test",())
         result = cursor.fetchall()
         return result
+
+    def count_all_moods(self):
+        cursor = self.conn.cursor()
+        cursor.execute("SELECT COUNT(word) FROM words")
+        result = cursor.fetchall()
+        return result[0][0]
