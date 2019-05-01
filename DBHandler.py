@@ -44,7 +44,7 @@ class DBHandler:
 
     def get_subtitle(self,id):
         cursor = self.conn.cursor()
-        cursor.execute("SELECT MOVIE_TITLE,datafile FROM resources WHERE id=%s"
+        cursor.execute("SELECT MOVIE_TITLE,datafile FROM test WHERE id=%s"
                          , (id,))
         result = cursor.fetchall()
         return result[0]
@@ -80,7 +80,10 @@ class DBHandler:
         list = self.list_moods()
         for element in list:
             count_cursor.execute("SELECT {moodp} FROM words WHERE word=%s ".format(moodp=element), (word,))
-            count = count_cursor.fetchall()[0][0]
+            count_array = count_cursor.fetchall()
+            if len(count_array) <= 0:
+                return [1,1]
+            count = count_array[0][0]
             total +=count
             if element == mood:
                 mood_value=count
@@ -110,3 +113,9 @@ class DBHandler:
         for x in result:
             print(x[0] + "-"+ str(x[1]))
 
+    def get_test_movies(self):
+        cursor = self.conn.cursor()
+        cursor.execute("SELECT test.ID,moods.mood,datafile,  movie_title FROM test, moods WHERE test.mood = moods.mood_id")
+        #cursor.execute("SELECT movie_title FROM test",())
+        result = cursor.fetchall()
+        return result
