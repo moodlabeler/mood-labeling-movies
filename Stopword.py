@@ -1,0 +1,3 @@
+class Stopword:
+    def __init__(self):
+        self.stopwords = self.stopwords = {"jag","det","är","du","inte","att","har","en","och","vi","i","på","ni","vad","han","var","för","här","om","med","mig","dig","som","den","kan","de","så","till","ska","vill","men","ett","hur","vet","nu","hon","av","er","min","där","ja","bara","man","då","kommer","ha","honom","måste","när","gör","skulle","får","nej","bra","kom","din","ta","ut","varför","göra","tack","mycket","vara","hade","dem","tror","nåt","okej","alla","sa","se","gå","lite","ingen","går","sig","eller","upp","allt","oss","in","få","vem","nån","från","kanske","aldrig","sen","blir","henne","igen","väl","tar","behöver","inget","ser","finns","två","säger","ge","mitt","än","åt"}

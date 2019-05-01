@@ -1,7 +1,6 @@
 import math
 from math import log
 
-import numpy as np
 
 from DBHandler import DBHandler
 from corpus_processing import Processor

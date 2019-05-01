@@ -3,6 +3,8 @@ import re
 
 import nltk
 from nltk.corpus import stopwords
+
+from Stopword import Stopword
 from DBHandler import DBHandler
 
 
@@ -34,7 +36,7 @@ class Processor:
         ### Fill in the bag-of-words with stemmed non-stopwords
         i = 0
         while i < len(splitted) - 1:
-            if splitted[i] not in stopwords.words('swedish'):
+            if splitted[i] not in stopwords.words('swedish') and splitted[i] not in Stopword().stopwords:
                 word = stemmer.stem(splitted[i])
                 #word = splitted[i]
                 #print(word)

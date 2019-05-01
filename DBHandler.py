@@ -104,14 +104,17 @@ class DBHandler:
         return [mood_value, total]
     #cursor.execute("SELECT {moodp} FROM words WHERE word=%s ".format(moodp=mood), (word,))
 
-    def get_all_word(self):
+    def get_all_word(self,mood):
         cursor = self.conn.cursor()
-        cursor.execute("SELECT word,joy FROM words")
+        cursor.execute("SELECT word,{moodp} FROM words".format(moodp=mood))
         result = cursor.fetchall()
-        print("word - joy - fear - sadness - surprise")
-        print(result)
-        for x in result:
-            print(x[0] + "-"+ str(x[1]))
+        return sorted(result, key=lambda y: int(y[1]), reverse=True)
+
+    def get_count_movies_for_mood(self,mood):
+        cursor=self.conn.cursor()
+        list=self.list_moods()
+        cursor.execute("SELECT COUNT(movie_title) from resources, moods where resources.Mood = moods.mood_id and moods.mood = %s",(mood,))
+        return cursor.fetchall()[0][0]
 
     def get_test_movies(self):
         cursor = self.conn.cursor()
