@@ -1,5 +1,6 @@
 import datetime
 import operator
+from math import exp, log
 
 from soupsieve.util import upper
 
@@ -24,8 +25,6 @@ def print_start():
     print("Printing results to file ", file_name)
     print("------------------------")
     return open(file_name, 'w')
-
-
 
 movies = DBHandler().get_test_movies()
 correct_class = 0
