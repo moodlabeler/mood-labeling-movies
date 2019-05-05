@@ -1,0 +1,99 @@
+Tårtgeneralen - JOY - SURPRISE
+('sadness', -9908.696607101292)
+('surprise', -9792.397821304563)
+('fear', -10040.471334760885)
+('joy', -9841.930179911578)
+
+Rum213 - SURPRISE - SURPRISE
+('sadness', -4560.562588219515)
+('surprise', -4503.6797686320115)
+('fear', -4614.351470674843)
+('joy', -4533.340612634027)
+
+The Square - SURPRISE - SURPRISE
+('sadness', -8078.472753226608)
+('surprise', -8010.590754128093)
+('fear', -8158.0441489798695)
+('joy', -8073.632221462529)
+
+The Nile Hilton Incident - SURPRISE - SURPRISE
+('sadness', -6445.768708935735)
+('surprise', -6340.940045424471)
+('fear', -6531.079913434739)
+('joy', -6486.973694303309)
+
+Korparna - SURPRISE - SURPRISE
+('sadness', -3157.9650483414825)
+('surprise', -3115.387324512473)
+('fear', -3200.311913820082)
+('joy', -3140.175139073335)
+
+Sameblod - SADNESS - SURPRISE
+('sadness', -3917.9653087702923)
+('surprise', -3886.1787382834877)
+('fear', -3988.553644448055)
+('joy', -3889.5340628367685)
+
+Citizen Schein - SURPRISE - SURPRISE
+('sadness', -14026.558080408156)
+('surprise', -13966.908649045716)
+('fear', -14261.857395258374)
+('joy', -14094.687183137452)
+
+Superswede - SADNESS - SURPRISE
+('sadness', -9320.343719441105)
+('surprise', -9224.563620095763)
+('fear', -9426.825733295193)
+('joy', -9319.478588173593)
+
+Ted - För Kärlekens Skull - SADNESS - JOY
+('sadness', -988.092690269951)
+('surprise', -974.7459639603086)
+('fear', -989.272741991131)
+('joy', -968.7457849676554)
+
+Den Allvarsamma leken - SADNESS - JOY
+('sadness', -4771.38261097978)
+('surprise', -4749.276086049068)
+('fear', -4875.350623080642)
+('joy', -4736.189987573685)
+
+Solsidan - JOY - SURPRISE
+('sadness', -9429.27429848422)
+('surprise', -9364.872909391253)
+('fear', -9524.837738533693)
+('joy', -9379.389557339164)
+
+Hundraettåringeren som smet - JOY - SURPRISE
+('sadness', -5125.453128912755)
+('surprise', -5050.254821538249)
+('fear', -5167.293971775974)
+('joy', -5112.177068322862)
+
+All inclusive - JOY - SURPRISE
+('sadness', -1741.2231935308478)
+('surprise', -1736.993905858222)
+('fear', -1781.15312094979)
+('joy', -1745.7910747354206)
+
+Bamse och häxans dotter - JOY - JOY
+('sadness', -4919.4600190362635)
+('surprise', -4832.359539713932)
+('fear', -4961.569125270563)
+('joy', -4823.760945765881)
+
+Jag äslkar dig - JOY - JOY
+('sadness', -7212.54304745784)
+('surprise', -7181.060288415641)
+('fear', -7333.658261948197)
+('joy', -7180.290593452847)
+
+Flykten till framtiden - JOY - SURPRISE
+('sadness', -7603.27140092177)
+('surprise', -7519.144146815911)
+('fear', -7705.736544639557)
+('joy', -7594.5732553837925)
+
+Total movies: 16
+Correct guesses: 7
+Correct percentage: 0.4375
