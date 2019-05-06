@@ -109,3 +109,6 @@ venv.bak/
 *.xml
 
 ignore.py
+.idea/workspace.xml
+*.xml
+*.iml
