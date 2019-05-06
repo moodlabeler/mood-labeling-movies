@@ -28,30 +28,40 @@ def print_start():
     print("------------------------")
     return open(file_name, 'w')
 
+def calculate_results(TP, FP, FN, tot_movies, correct_guess):
+    precsision = TP / (TP + FP)
+    recall = TP / (TP + FN)
+    accuracy = correct_guess / tot_movies
+    print("Recall: ", recall)
+    print("Precsision: ", precsision)
+    print("Accuracy: ", accuracy)
 
 movies = DBHandler().get_test_movies()
-correct_class = 0
-tot_movies = 0
 result_file = print_start()
-for movie in movies:
-    tot_movies += 1
-    id = movie[0]
-    mood = movie[1]
-    subtitles = movie[2]
-    title = movie[3]
-    b = BayesClassifier(id)
-    dir = {}
-    dir["sadness"] = b.calculate_final("sadness")
-    dir["surprise"] = b.calculate_final("surprise")
-    dir["fear"] = b.calculate_final("fear")
-    dir["joy"] = b.calculate_final("joy")
-    result_mood = max(dir.items(), key=operator.itemgetter(1))[0]
-    print(title + "-" + upper(mood) + " - " + upper(result_mood))
-    result_file.write(title + " - " + upper(mood) + " - " + upper(result_mood) + "\n")
-    if mood == result_mood:
-        correct_class += 1
-    for key in dir.items():
-        print(key)
-        result_file.write(str(key) + "\n")
-    result_file.write("\n")
+moods = ["sadness", "fear", "joy", "surprise"]
+for current_mood in moods:
+    correct_guess = 0
+    tot_movies = 0
+    TP = 0
+    FP = 0
+    FN = 0
+    print("Evaluating ", current_mood)
+    for movie in movies:
+        tot_movies += 1
+        id = movie[0]
+        actual__mood = movie[2]
+        #title = movie[3]
+        b = BayesClassifier()
+        predicted_mood = b.label(id)
+        if current_mood == predicted_mood and actual__mood == predicted_mood:
+            TP += 1
+            correct_guess += 1
+        elif current_mood == predicted_mood and actual__mood != predicted_mood:
+            FP += 1
+        else:
+            FN += 1
+    calculate_results(TP, FP, FN, tot_movies, correct_guess)
+
+
+
 print_results(tot_movies, correct_class, result_file)
