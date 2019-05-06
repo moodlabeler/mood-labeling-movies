@@ -7,6 +7,13 @@ class DBHandler:
         password='root',
         host='127.0.0.1',
         database='moods')
+        self.mood_list = {}
+        count_cursor = self.conn.cursor()
+        for mood in self.list_moods():
+            count_cursor.execute("SELECT sum({moodp}) FROM words ".format(moodp=mood))
+            count_array = count_cursor.fetchall()
+            total = count_array[0][0]
+            self.mood_list[mood] = total
 
     def getSubtitles(self,mood):
         cursor = self.conn.cursor()
@@ -77,17 +84,16 @@ class DBHandler:
         mood_value = 0
         cursor = self.conn.cursor()
         count_cursor = self.conn.cursor()
-        list = self.list_moods()
-        for element in list:
-            count_cursor.execute("SELECT {moodp} FROM words WHERE word=%s ".format(moodp=element), (word,))
-            count_array = count_cursor.fetchall()
-            if len(count_array) <= 0:
-                return [1,1]
+        #list = self.list_moods()
+        #print(total)
+        total = self.mood_list[mood]
+        count_cursor.execute("SELECT {moodp} FROM words where word=%s".format(moodp=mood), (word,))
+        count_array = count_cursor.fetchall()
+        if len(count_array) >0:
             count = count_array[0][0]
-            total +=count   #total is for all the words in all the moods
-            if element == mood:
-                mood_value=count    #count is specific word in specific mood
-        return [mood_value,total]
+        else:
+            count = 0
+        return [count,total]
 
     # Returns the total occurence of words for a specific mood and the total occurence of words for all moods.
     def get_mood_count(self,mood):
@@ -128,3 +134,5 @@ class DBHandler:
         cursor.execute("SELECT COUNT(word) FROM words")
         result = cursor.fetchall()
         return result[0][0]
+
+print(DBHandler().get_word_count("akab", "fear"))
