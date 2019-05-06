@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6b2bc0d-d77c-4b4e-b031-3da0abad3644" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/scripts/classifier_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier_script.py" afterDir="false" />
-    </list>
+    <list default="true" id="d6b2bc0d-d77c-4b4e-b031-3da0abad3644" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/classifier_script.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="785">
-              <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
+            <state relative-caret-position="455">
+              <caret line="54" column="29" lean-forward="true" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -234,12 +232,12 @@
       <option name="presentableId" value="Default" />
       <updated>1557145474159</updated>
       <workItem from="1557145475800" duration="1594000" />
-      <workItem from="1557148330651" duration="3876000" />
+      <workItem from="1557148330651" duration="4222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6263000" />
+    <option name="totallyTimeSpent" value="6609000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -359,8 +357,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/classifier_script.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="785">
-          <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
+        <state relative-caret-position="455">
+          <caret line="54" column="29" lean-forward="true" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
