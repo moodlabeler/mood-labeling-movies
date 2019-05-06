@@ -28,6 +28,7 @@ def print_start():
     print("------------------------")
     return open(file_name, 'w')
 
+
 def calculate_results(TP, FP, FN, tot_movies, correct_guess):
     precsision = TP / (TP + FP)
     recall = TP / (TP + FN)
@@ -36,6 +37,7 @@ def calculate_results(TP, FP, FN, tot_movies, correct_guess):
     print("Precsision: ", precsision)
     print("Accuracy: ", accuracy)
     print("***********************")
+
 
 movies = DBHandler().get_test_movies()
 result_file = print_start()
@@ -50,8 +52,8 @@ for current_mood in moods:
     for movie in movies:
         tot_movies += 1
         id = movie[0]
-        actual__mood = movie[2]
-        #title = movie[3]
+        actual__mood = movie[1]
+        # title = movie[3]
         b = BayesClassifier()
         predicted_mood = b.label(id)
         if current_mood == predicted_mood and actual__mood == predicted_mood:
@@ -63,6 +65,4 @@ for current_mood in moods:
             FN += 1
     calculate_results(TP, FP, FN, tot_movies, correct_guess)
 
-
-
-#print_results(tot_movies, correct_class, result_file)
+# print_results(tot_movies, correct_class, result_file)
