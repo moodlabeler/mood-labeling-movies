@@ -51,7 +51,7 @@ class DBHandler:
 
     def get_subtitle(self,id):
         cursor = self.conn.cursor()
-        cursor.execute("SELECT MOVIE_TITLE,datafile FROM test WHERE id=%s"
+        cursor.execute("SELECT MOVIE_TITLE,datafile FROM testdata WHERE id=%s"
                          , (id,))
         result = cursor.fetchall()
         return result[0]
@@ -124,7 +124,7 @@ class DBHandler:
 
     def get_test_movies(self):
         cursor = self.conn.cursor()
-        cursor.execute("SELECT test.ID,moods.mood,datafile,  movie_title FROM test, moods WHERE test.mood = moods.mood_id")
+        cursor.execute("SELECT testdata.ID, mood ,datafile,  movie_title FROM testdata")
         #cursor.execute("SELECT movie_title FROM test",())
         result = cursor.fetchall()
         return result
@@ -134,5 +134,3 @@ class DBHandler:
         cursor.execute("SELECT COUNT(word) FROM words")
         result = cursor.fetchall()
         return result[0][0]
-
-print(DBHandler().get_word_count("akab", "fear"))

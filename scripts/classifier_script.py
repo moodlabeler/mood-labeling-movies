@@ -7,11 +7,12 @@ from soupsieve.util import upper
 from DBHandler import DBHandler
 from bayes_classifier import BayesClassifier
 
+
 def print_results(tot_movies, correct_class, result_file):
     print("Total movies: ", tot_movies)
     print("Correct guesses: ", correct_class)
     print("Correct percentage: ", correct_class / tot_movies)
-    result_file.write("Total movies: " +  str(tot_movies) + "\n")
+    result_file.write("Total movies: " + str(tot_movies) + "\n")
     result_file.write("Correct guesses: " + str(correct_class) + "\n")
     result_file.write("Correct percentage: " + str(correct_class / tot_movies) + "\n")
     result_file.close()
@@ -19,12 +20,14 @@ def print_results(tot_movies, correct_class, result_file):
     print("Done")
     print("------------------------")
 
+
 def print_start():
     file_name = str(datetime.datetime.now().strftime("%Y%m%d-%H%M%S")) + ".txt"
     print("------------------------")
     print("Printing results to file ", file_name)
     print("------------------------")
     return open(file_name, 'w')
+
 
 movies = DBHandler().get_test_movies()
 correct_class = 0
@@ -52,4 +55,3 @@ for movie in movies:
         result_file.write(str(key) + "\n")
     result_file.write("\n")
 print_results(tot_movies, correct_class, result_file)
-

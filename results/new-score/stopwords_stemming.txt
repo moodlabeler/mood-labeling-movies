@@ -1,0 +1,147 @@
+About a Boy - JOY - SADNESS
+('sadness', -6725.064520514513)
+('surprise', -6774.529052774406)
+('fear', -6744.7542204616275)
+('joy', -6767.045831556941)
+
+Batman Begins - EXCITMENT - FEAR
+('sadness', -10341.690357985779)
+('surprise', -10338.137777175023)
+('fear', -10317.042014838296)
+('joy', -10403.48574666652)
+
+Ben-Hur - EXCITMENT - SADNESS
+('sadness', -7641.557908493289)
+('surprise', -7646.331882659292)
+('fear', -7667.676661357303)
+('joy', -7669.222177121778)
+
+Black Swan - FEAR - JOY
+('sadness', -5819.969752807955)
+('surprise', -5826.816064824408)
+('fear', -5804.925782553985)
+('joy', -5773.198789992102)
+
+Blue Valentine - SADNESS - SADNESS
+('sadness', -5609.682857435947)
+('surprise', -5643.924733076747)
+('fear', -5632.599304887345)
+('joy', -5610.411861754291)
+
+Den gröna milen - SADNESS - FEAR
+('sadness', -8957.096327476544)
+('surprise', -8966.901769936068)
+('fear', -8928.017662369144)
+('joy', -8975.116640220507)
+
+En oväntad vänskap - JOY - SADNESS
+('sadness', -8213.999534286071)
+('surprise', -8235.461328028345)
+('fear', -8230.804015612825)
+('joy', -8216.384368474695)
+
+Familjetrippen - JOY - SADNESS
+('sadness', -10607.84612101923)
+('surprise', -10653.7982723598)
+('fear', -10649.403114787274)
+('joy', -10622.437926791135)
+
+Född den fjärde juli - SADNESS - SURPRISE
+('sadness', -12575.904366316114)
+('surprise', -12524.62860555145)
+('fear', -12548.378178697689)
+('joy', -12612.404340545076)
+
+Ghost - JOY - SURPRISE
+('sadness', -6272.783194492315)
+('surprise', -6272.3743294788965)
+('fear', -6285.9000072202725)
+('joy', -6277.525959311201)
+
+Halloween - FEAR - FEAR
+('sadness', -7518.476844240253)
+('surprise', -7533.696744122014)
+('fear', -7484.914208255891)
+('joy', -7532.702011748691)
+
+Harry Potter: Goblet of Fire - EXCITMENT - JOY
+('sadness', -9535.58195974352)
+('surprise', -9578.513826363847)
+('fear', -9538.433932472224)
+('joy', -9523.276428356665)
+
+Inglourious Basterds - EXCITMENT - SADNESS
+('sadness', -14245.851672454748)
+('surprise', -14293.90961442182)
+('fear', -14273.822885615004)
+('joy', -14358.422689224619)
+
+It - FEAR - FEAR
+('sadness', -7612.3545999601965)
+('surprise', -7636.59314713479)
+('fear', -7597.3217159209935)
+('joy', -7619.008796183421)
+
+Lion - SADNESS - JOY
+('sadness', -4345.042305101085)
+('surprise', -4359.5087568115305)
+('fear', -4372.831794100779)
+('joy', -4340.498881465507)
+
+Nyckeln till firhet - JOY - SADNESS
+('sadness', -11183.203274426547)
+('surprise', -11201.089196565985)
+('fear', -11183.51449261903)
+('joy', -11259.441119025547)
+
+Prometheus - FEAR - FEAR
+('sadness', -7420.36618903496)
+('surprise', -7355.032673827171)
+('fear', -7343.799949081346)
+('joy', -7443.739971868102)
+
+Solens rike - SADNESS - SURPRISE
+('sadness', -5746.284537300512)
+('surprise', -5727.791253307748)
+('fear', -5750.283311294304)
+('joy', -5789.3092346103795)
+
+The Blind Side - JOY - SADNESS
+('sadness', -10898.155368432004)
+('surprise', -10909.093959907705)
+('fear', -10935.472079449593)
+('joy', -10971.546288616883)
+
+The Departed - EXCITMENT - FEAR
+('sadness', -9613.271397629784)
+('surprise', -9637.349792538398)
+('fear', -9587.603121026734)
+('joy', -9713.200115388789)
+
+The Fighter - SADNESS - SADNESS
+('sadness', -7524.766169261872)
+('surprise', -7528.101444329002)
+('fear', -7546.266197513987)
+('joy', -7570.977584006216)
+
+The Insider - EXCITMENT - SADNESS
+('sadness', -10860.126637000374)
+('surprise', -10901.881512484613)
+('fear', -10860.37697577464)
+('joy', -10985.569439407544)
+
+The Possesion of Hanna Grace - FEAR - FEAR
+('sadness', -4346.206339323909)
+('surprise', -4336.381148186661)
+('fear', -4316.683901867528)
+('joy', -4383.469782440994)
+
+The Ring - FEAR - SADNESS
+('sadness', -5844.804338289603)
+('surprise', -5883.798731009781)
+('fear', -5854.936598595408)
+('joy', -5895.860502227042)
+
+Total movies: 24
+Correct guesses: 6
+Correct percentage: 0.25
