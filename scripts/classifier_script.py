@@ -35,6 +35,7 @@ def calculate_results(TP, FP, FN, tot_movies, correct_guess):
     print("Recall: ", recall)
     print("Precsision: ", precsision)
     print("Accuracy: ", accuracy)
+    print("***********************")
 
 movies = DBHandler().get_test_movies()
 result_file = print_start()
@@ -64,4 +65,4 @@ for current_mood in moods:
 
 
 
-print_results(tot_movies, correct_class, result_file)
+#print_results(tot_movies, correct_class, result_file)
