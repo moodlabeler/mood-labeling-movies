@@ -9,7 +9,7 @@ from corpus_processing import Processor
 class BayesClassifier:
     def __init__(self,id):
         self.db = DBHandler()
-        movie= self.db.get_subtitle(id)
+        movie = self.db.get_subtitle(id)
         self.bag = Processor().text_pre_processing(movie[1])
         self.all_words_count = self.smoothing()
 
