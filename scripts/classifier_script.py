@@ -30,7 +30,11 @@ def print_start():
 
 
 def calculate_results(TP, FP, FN, tot_movies, correct_guess):
-    precsision = TP / (TP + FP)
+    if FP==0 and TP == 0:
+        precsision = -1
+    else:
+        precsision = TP / (TP + FP)
+
     recall = TP / (TP + FN)
     accuracy = correct_guess / tot_movies
     print("Recall: ", recall)
@@ -56,13 +60,15 @@ for current_mood in moods:
         # title = movie[3]
         b = BayesClassifier()
         predicted_mood = b.label(id)
+        #print(actual__mood + " - " + predicted_mood)
         if current_mood == predicted_mood and actual__mood == predicted_mood:
             TP += 1
-            correct_guess += 1
         elif current_mood == predicted_mood and actual__mood != predicted_mood:
             FP += 1
         else:
             FN += 1
+        if predicted_mood == actual__mood:
+            correct_guess+=1
     calculate_results(TP, FP, FN, tot_movies, correct_guess)
 
 # print_results(tot_movies, correct_class, result_file)
