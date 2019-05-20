@@ -1,4 +1,5 @@
 # mood-labeling-movies
+## Peter Svensson & Youssef Taoudi
 Prototype for labeling movies based on their movie subtitles using a Naive Bayes Classifier
 
 ### Model
