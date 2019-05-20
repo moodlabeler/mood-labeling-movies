@@ -1,0 +1,21 @@
+Calculating for: sadness
+Recall:  0.0
+Precsision:  -1
+TP : 0, FP : 0 , FN : 6
+***********************
+Calculating for: fear
+Recall:  0.8333333333333334
+Precsision:  0.4166666666666667
+TP : 5, FP : 7 , FN : 1
+***********************
+Calculating for: joy
+Recall:  0.3333333333333333
+Precsision:  0.3333333333333333
+TP : 2, FP : 4 , FN : 4
+***********************
+Calculating for: surprise
+Recall:  0.16666666666666666
+Precsision:  0.16666666666666666
+TP : 1, FP : 5 , FN : 5
+***********************
+Accuracy: 7/25 - 29%
