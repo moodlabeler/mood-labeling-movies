@@ -109,4 +109,4 @@ venv.bak/
 *.xml
 
 ignore.py
-DS_STORE
+.DS_STORE
