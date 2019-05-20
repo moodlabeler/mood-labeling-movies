@@ -1,5 +1,5 @@
-from DBHandler import DBHandler
-from bayes_classifier import BayesClassifier
+from integration.DBHandler import DBHandler0
+from model.bayes_classifier import BayesClassifier
 
 movies = DBHandler().get_test_movies()
 moods = ["sadness", "fear", "joy", "surprise"]

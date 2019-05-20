@@ -1,11 +1,10 @@
-import operator
 import re
 
 import nltk
 from nltk.corpus import stopwords
 
-from Stopword import Stopword
-from DBHandler import DBHandler
+from model.stopwords import Stopword
+from integration.DBHandler import DBHandler
 
 
 class Processor:
@@ -15,16 +14,12 @@ class Processor:
         dbhandler = DBHandler()
         res = dbhandler.getSubtitles(mood)
         j=0
-        self.occ = 0
-        self.occlist = []
         for x in res:
             bag = self.text_pre_processing(x[0])
             i=0
             for key in bag.items():
                 dbhandler.storeWord(key[0],mood,key[1])
                 i += 1
-        print(self.occ)
-        print(self.occlist)
         print("--------------------")
         dbhandler.disconnect()
 
@@ -41,13 +36,8 @@ class Processor:
 
         ### Fill in the bag-of-words with stemmed non-stopwords
         i = 0
-        occ = 0
         while i < len(splitted) - 1:
             if splitted[i] not in stopwords.words('swedish') and splitted[i] not in Stopword().stopwords:
-                if stemmer.stem(splitted[i]) =="tunn":
-                    self.occ += 1
-                    if splitted[i] not in self.occlist:
-                        self.occlist.append(splitted[i])
                 word = stemmer.stem(splitted[i])
                 #word = splitted[i]
                 #print(word)

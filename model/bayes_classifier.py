@@ -1,9 +1,8 @@
-import math
 import sys
 from math import log
 
-from DBHandler import DBHandler
-from corpus_processing import Processor
+from integration.DBHandler import DBHandler
+from model.corpus_processing import Processor
 
 
 ### Fetches text and movie title of movie with @param - id

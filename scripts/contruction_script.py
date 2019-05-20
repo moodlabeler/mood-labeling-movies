@@ -1,4 +1,4 @@
-from corpus_processing import Processor
+from model.corpus_processing import Processor
 
 pro = Processor()
 pro.clear_lexicons()

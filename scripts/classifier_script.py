@@ -1,11 +1,5 @@
-import datetime
-import operator
-from math import exp, log
-
-from soupsieve.util import upper
-
-from DBHandler import DBHandler
-from bayes_classifier import BayesClassifier
+from integration.DBHandler import DBHandler
+from model.bayes_classifier import BayesClassifier
 
 
 def print_results(tot_movies, correct_class, result_file):

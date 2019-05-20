@@ -1,5 +1,5 @@
-from DBHandler import DBHandler
-from Stopword import Stopword
+from integration.DBHandler import DBHandler
+from model.stopwords import Stopword
 
 
 
