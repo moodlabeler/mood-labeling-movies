@@ -1,4 +1,4 @@
-from integration.DBHandler import DBHandler0
+from integration.DBHandler import DBHandler
 from model.bayes_classifier import BayesClassifier
 
 movies = DBHandler().get_test_movies()
