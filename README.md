@@ -9,7 +9,7 @@ The model layer includes all classification, learning and text-processing classe
 The integration layer includes all SQL database access calls
 
 ### Scripts
-The script folder includes the script for constructing a lexicon using the model layer and the testing scripts
+The script folder includes files for constructing the lexicon and for testing
 
 ### Results
 The results folder includes text files for all benchmarks
